@@ -1,7 +1,5 @@
 var APIBuilder = require('@axway/api-builder-runtime');
 var Model = APIBuilder.createModel('User', {
-    "description": "User information",
-    "connector": "memory",
     "fields": {
         "name": {
             "type": "string"
@@ -11,14 +9,21 @@ var Model = APIBuilder.createModel('User', {
         },
         "age": {
             "type": "number"
+        },
+        "company": {
+            "type": "string"
         }
     },
+    "connector": "memory",
     "actions": [
         "create",
         "read",
         "update",
         "delete",
         "deleteAll"
-    ]
+    ],
+    "singular": "user",
+    "plural": "users",
+    "description": "User information"
 });
 module.exports = Model;
